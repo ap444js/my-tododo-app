@@ -1,0 +1,137 @@
+<html>
+<head><title>TEST</title></head>
+<Body>
+<hi> Hi </h1>
+
+<script>
+//'use strict'
+
+/* //================================= varible scope ======================================
+let myName = "Anand"
+function amazingFunction(){
+let myName = "Anand Prabhat"
+	if( 2+2 == 4 ){
+	let myName = "Anand Prabhat from Bangalore"
+		console.log(myName)
+	}
+	console.log(myName)
+}
+
+amazingFunction()
+console.log(myName)
+
+*/
+
+/* //================================= Object/Context scope ======================================
+let myObj = {
+	fName : "Anand",
+	lName : "Prabhat",
+	getName(){
+		console.log(this);
+		function newFunction() {
+			console.log(this);
+		}
+		newFunction();
+		console.log("My Name is :: " +this.fName +" " +this.lName );
+	}
+}
+myObj.getName()
+
+function accessOtherObjectContext(){
+	console.log("accessOtherObjectContext My Name is :: " +this.fName +" " +this.lName );
+}
+
+accessOtherObjectContext();
+//accessOtherObjectContext.call(myObj);
+accessOtherObjectContext.apply(myObj);
+*/
+
+//================================= with names/Normal function call ======================================
+/*	document.addEventListener("click", myFunction )
+	function myFunction(){
+		alert("clicked");
+	} */
+	
+//================================= with annonymous function call ======================================
+/* document.addEventListener("click", function(){
+	alert("annonymous function clicked");
+}) 
+
+let myNumbers = [ 10, 20, 100 ]
+let doubleNumbers = myNumbers.map( function(x){ return x * 2 } );
+console.log("annonymous function  "+ doubleNumbers)
+*/
+
+//================================= with Arrow function call ======================================
+//1st example
+/*document.addEventListener("click", () => {
+	alert("Arrow function clicked");
+})
+//2nd example
+let myNumbers = [ 10, 20, 100 ]
+let doubleNumbers = myNumbers.map( x => x * 2 );
+console.log("Arrow function  " +doubleNumbers)
+
+//3rd example
+let john = {
+	fName : "Anand",
+	lName : "Prabhat",
+	getName(){
+		console.log(this);
+		let newFunction = () => {
+			console.log(this);
+		}
+		newFunction();
+		console.log("My Name is :: " +this.fName +" " +this.lName );
+	}
+}
+john.getName()
+*/
+
+//================================= Function Hoisting ======================================
+/*cool()
+
+function cool(){
+	console.log("Tihs is cool function");
+}
+
+//annonymousFunction();
+let annonymousFunction = function(){
+	console.log("Tihs is annonymousFunction function");
+}
+annonymousFunction();
+
+//arrowFunction();
+let arrowFunction = () => {
+	console.log("Tihs is arrowFunction function");
+}
+arrowFunction();
+*/
+
+//================================= Template Literals ======================================
+
+let fName = "Anand"
+let lName = "Prabhat"
+
+console.log(`My Name is :  ${fName}  ${lName} 
+
+sdfs
+
+dsfsd
+`);
+
+
+
+
+
+// ======================================= important to know ==========================================
+
+//console.log(strowberryCount);
+//var strowberryCount = 100;
+
+
+
+</script>
+
+<Body>
+</html>

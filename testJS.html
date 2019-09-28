@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example HTML Page</title>
+<!-- <script type="text/javascript" defer="defer" src="example1.js"></script>
+<script type="text/javascript" defer="defer" src="example2.js"></script> -->
+</head>
+<body>
+<P>Hi JS</p>
+<noscript>
+<p>This page requires a JavaScript-enabled browser.</p>
+</noscript>
+</body>
+
+<script>
+
+var jane = {
+    name: 'Jane',
+    friends: [ 'Tarzan', 'Cheeta' ],
+	
+    <!-- logHiToFriends: function () { -->
+        <!-- 'use strict'; -->
+		<!-- var that = this; -->
+        <!-- this.friends.forEach(function (friend) { -->
+			<!-- //console.log(jane.name+' says hi to '+friend); -->
+            
+			<!-- // `this` is undefined here -->
+            <!-- //console.log(this.name+' says hi to '+friend); -->
+			
+			<!-- console.log(that.name+' says hi to '+friend); -->
+        <!-- }); -->
+    <!-- } -->
+	
+	logHiToFriends: function () {
+		'use strict';
+		this.friends.forEach(function (friend) {
+			console.log( this.name+' says hi to '+friend );
+		}, this);
+	}
+
+}
+
+console.log("=======================================================");
+function addEntry(squirrel) {
+  var entry = {events: [], squirrel: squirrel};
+  for (var i = 1; i < arguments.length; i++)
+    entry.events.push(arguments[i]);
+ // journal.push(entry);
+  console.log(entry);
+}
+addEntry(true, "work", "touched tree", "pizza", "running", "television");
+
+
+</script>
+</html>

@@ -1,0 +1,121 @@
+<html>
+<head><title>Test</title>
+
+<body>
+Hi
+
+<br/><br/>
+<button id="testcallback"> test callback </button>
+<br/><br/>
+<button id="test"> simple button </button>
+
+
+</body>
+
+<script>
+
+const btn = document.querySelector('#testcallback');
+
+btn.addEventListener('click', showAlert);
+
+function showAlert() {
+  alert('Hahaha got call back!!!!!!!');
+}
+
+//========================= Sort Numbers =====================================
+function compareNumbers(a, b) {
+    if (a === b) return 0;
+    if (a > b)   return 1;
+    /* else */   return -1;
+}
+
+let nums = [7, 3, 1, 5, 8, 9, 6, 4, 2];
+nums.sort(compareNumbers);
+console.log(nums); //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+function solution(S) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    
+    if(S>0){
+        let temp=0, rem=0, number=0;
+        number = S;
+        
+        while(number>0){
+            rem = number%10;
+            temp = temp*10 +rem;
+            number = parseInt(number/10);
+        }
+        if(temp === S){
+            if( temp === 1){
+                return "NO";
+            }else if( temp === 2 ){
+                return "YES";
+            }else{
+                for(let j=0; j<temp; j++){
+                    if(S%j===0){
+                        return "NO";
+                    }
+                }
+                return "YES";
+            }
+        }
+        
+    }else{
+        let length = S.length;
+        let reverseStr = "";
+        for(let i=length; i>0; i--){
+            reverseStr = reverseStr +"" + S[i-1];
+        }
+        if(reverseStr === S){
+           if( length === 1){
+                return "NO";
+            }else if( length === 2 ){
+                return "YES";
+            }else{
+                for(let k=0; k<length; k++){
+                    if(length%k===0){
+                        return "NO";
+                    }
+                }
+                return "YES";
+            }
+        }
+        
+    }
+}
+solution("random12321random");
+
+
+//============================= Singleton Design Pattern =========================================
+var Singleton = (function () {
+    var instance;
+ 
+    function createInstance() {
+        var object = new Object("I am the instance");
+        return object;
+    }
+ 
+    return {
+        getInstance: function () {
+            if (!instance) {
+                instance = createInstance();
+            }
+            return instance;
+        }
+    };
+})();
+ 
+function run() {
+ 
+    var instance1 = Singleton.getInstance();
+    var instance2 = Singleton.getInstance();
+ 
+    alert("Same instance? " + (instance1 === instance2));  
+}
+
+
+
+</script>
+
+</html>
